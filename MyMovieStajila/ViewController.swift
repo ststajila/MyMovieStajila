@@ -16,10 +16,11 @@ struct SearchResults: Codable{
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var errorTrackingLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var searchResultsTextView: UITextView!
     @IBOutlet weak var searchTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,8 @@ class ViewController: UIViewController {
         if searchTextField.text != "" {
             searchForTheMovie()
         } else{
-            searchResultsTextView.textColor = UIColor.red
-            searchResultsTextView.text = "Type something to search!"
+            errorTrackingLabel.textColor = UIColor.red
+            errorTrackingLabel.text = "Type something to search!"
         }
     }
     
@@ -76,6 +77,14 @@ class ViewController: UIViewController {
                         
                     }
         dataTask.resume()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
     
 }
