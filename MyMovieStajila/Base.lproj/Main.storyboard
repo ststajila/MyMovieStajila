@@ -44,7 +44,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="searchResultsTextField" destination="G3z-FZ-7G7" id="lSL-nR-lAV"/>
+                        <outlet property="searchResultsTextView" destination="G3z-FZ-7G7" id="qZ3-Ff-3fA"/>
                         <outlet property="searchTextField" destination="PHw-XB-SIJ" id="Hnu-8o-HXh"/>
                     </connections>
                 </viewController>

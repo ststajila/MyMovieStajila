@@ -18,7 +18,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var searchResultsTextField: UITextView!
+    
+    @IBOutlet weak var searchResultsTextView: UITextView!
     @IBOutlet weak var searchTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func search(_ sender: Any) {
-        if searchTextField.text != ""{
+        if searchTextField.text != "" {
             searchForTheMovie()
         } else{
-            searchResultsTextField.textColor = UIColor.red
-            searchResultsTextField.text = "Type something to search!"
+            searchResultsTextView.textColor = UIColor.red
+            searchResultsTextView.text = "Type something to search!"
         }
     }
     
@@ -47,31 +48,33 @@ class ViewController: UIViewController {
                 if let d = data {
                     if let jsonObj = try? JSONSerialization.jsonObject(with: d, options: .allowFragments) as? NSDictionary{
                         print(jsonObj)
-                        if let response = jsonObj.value(forKey: "Response") as? String{
+                        if let response = jsonObj.object(forKey: "Response") as? String{
                             if response == "True"{
-                                if let movieObj = try? JSONDecoder().decode(SearchResults.self, from: d){
-                                    self.searchResultsTextField.textColor = UIColor.black
+                            if let movieObj = try? JSONDecoder().decode(SearchResults.self, from: d){
+                                DispatchQueue.main.async{
+                                    self.searchResultsTextView.textColor = UIColor.black
+                                    self.searchResultsTextView.text = ""
                                     for movie in movieObj.Search{
                                         DispatchQueue.main.async{
-                                            self.searchResultsTextField.text += "\(movie.Title): \(movie.Year)"
+                                            self.searchResultsTextView.text += "\(movie.Title): \(movie.Year)\n"
                                         }
                                     }
-                                    
                                 }
-                            } else{
-                                if let error = jsonObj.value(forKey: "Error") as? String{
+                                }
+                            } else {
+                                if let error = jsonObj.value(forKey: "Error"){
                                     DispatchQueue.main.async{
-                                        self.searchResultsTextField.textColor = UIColor.red
-                                        self.searchResultsTextField.text = "\(error)"
+                                        self.searchResultsTextView.textColor = UIColor.red
+                                        self.searchResultsTextView.text = "\(error)"
                                     }
                                 }
                             }
                         }
-                        
                     }
                 }
             }
-        }
+                        
+                    }
         dataTask.resume()
     }
     
