@@ -20,10 +20,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var errorTrackingLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var searchResultsArray: [MovieSearch] = []
     
     @IBOutlet weak var searchTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        errorTrackingLabel.textColor = UIColor.green
+        errorTrackingLabel.text = "Everything Looks Good"
         
     }
     
@@ -37,6 +43,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func searchForTheMovie(){
+        
+        errorTrackingLabel.textColor = UIColor.green
+        errorTrackingLabel.text = "Everything Looks Good"
+        
         let session = URLSession.shared
         let movieURL = URL(string: "http://www.omdbapi.com/?i=tt3896198&apikey=cafd33a0&api&s=\(searchTextField.text!.lowercased())")
         
@@ -51,22 +61,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         print(jsonObj)
                         if let response = jsonObj.object(forKey: "Response") as? String{
                             if response == "True"{
-                            if let movieObj = try? JSONDecoder().decode(SearchResults.self, from: d){
-                                DispatchQueue.main.async{
-                                    self.searchResultsTextView.textColor = UIColor.black
-                                    self.searchResultsTextView.text = ""
-                                    for movie in movieObj.Search{
-                                        DispatchQueue.main.async{
-                                            self.searchResultsTextView.text += "\(movie.Title): \(movie.Year)\n"
-                                        }
+                                if let movieObj = try? JSONDecoder().decode(SearchResults.self, from: d){
+                                    self.searchResultsArray = movieObj.Search
+                                    DispatchQueue.main.async{
+                                        self.tableView.reloadData()
                                     }
                                 }
-                                }
                             } else {
-                                if let error = jsonObj.value(forKey: "Error"){
+                                if let error = jsonObj.value(forKey: "Error") as? String{
                                     DispatchQueue.main.async{
-                                        self.searchResultsTextView.textColor = UIColor.red
-                                        self.searchResultsTextView.text = "\(error)"
+                                        self.errorTrackingLabel.textColor = UIColor.red
+                                        self.errorTrackingLabel.text = "\(error)"
                                     }
                                 }
                             }
@@ -74,17 +79,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     }
                 }
             }
+        }
                         
-                    }
         dataTask.resume()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return searchResultsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+       let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
+        cell.textLabel!.text = "\(searchResultsArray[indexPath.row].Title): \(searchResultsArray[indexPath.row].Year)"
+        
+        return cell
     }
     
 }
