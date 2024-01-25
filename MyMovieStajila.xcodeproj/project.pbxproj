@@ -16,6 +16,7 @@
 		1427FB962B5EC63100C4E2F2 /* MyMovieStajilaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427FB952B5EC63100C4E2F2 /* MyMovieStajilaTests.swift */; };
 		1427FBA02B5EC63100C4E2F2 /* MyMovieStajilaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427FB9F2B5EC63100C4E2F2 /* MyMovieStajilaUITests.swift */; };
 		1427FBA22B5EC63200C4E2F2 /* MyMovieStajilaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427FBA12B5EC63200C4E2F2 /* MyMovieStajilaUITestsLaunchTests.swift */; };
+		149D2E632B62AD4200621D50 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D2E622B62AD4200621D50 /* MoreInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1427FB9B2B5EC63100C4E2F2 /* MyMovieStajilaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMovieStajilaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1427FB9F2B5EC63100C4E2F2 /* MyMovieStajilaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieStajilaUITests.swift; sourceTree = "<group>"; };
 		1427FBA12B5EC63200C4E2F2 /* MyMovieStajilaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieStajilaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		149D2E622B62AD4200621D50 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				1427FB7E2B5EC62F00C4E2F2 /* AppDelegate.swift */,
 				1427FB802B5EC62F00C4E2F2 /* SceneDelegate.swift */,
+				149D2E622B62AD4200621D50 /* MoreInfoViewController.swift */,
 				1427FB822B5EC62F00C4E2F2 /* ViewController.swift */,
 				1427FB842B5EC62F00C4E2F2 /* Main.storyboard */,
 				1427FB872B5EC63100C4E2F2 /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1427FB832B5EC62F00C4E2F2 /* ViewController.swift in Sources */,
+				149D2E632B62AD4200621D50 /* MoreInfoViewController.swift in Sources */,
 				1427FB7F2B5EC62F00C4E2F2 /* AppDelegate.swift in Sources */,
 				1427FB812B5EC62F00C4E2F2 /* SceneDelegate.swift in Sources */,
 			);

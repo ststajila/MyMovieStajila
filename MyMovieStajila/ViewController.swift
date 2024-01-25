@@ -5,9 +5,16 @@
 //  Created by STANISLAV STAJILA on 1/22/24.
 //
 
+public class SelectedMovieInfo{
+    static var movie: MovieSearch?
+}
+
 struct MovieSearch: Codable{
+    var Poster: String
     var Title: String
+    var `Type`: String
     var Year: String
+    var imdbID: String
 }
 
 struct SearchResults: Codable{
@@ -93,6 +100,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel!.text = "\(searchResultsArray[indexPath.row].Title): \(searchResultsArray[indexPath.row].Year)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        SelectedMovieInfo.movie = searchResultsArray[indexPath.row]
+        performSegue(withIdentifier: "moreInfo", sender: self)
     }
     
 }
