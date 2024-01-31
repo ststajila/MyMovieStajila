@@ -6,7 +6,7 @@
 //
 
 public class SelectedMovieInfo{
-    static var movie: MovieSearch?
+    static var selectedMovie: MovieSearch?
 }
 
 struct MovieSearch: Codable{
@@ -103,7 +103,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        SelectedMovieInfo.movie = searchResultsArray[indexPath.row]
+        SelectedMovieInfo.selectedMovie = searchResultsArray[indexPath.row]
         performSegue(withIdentifier: "moreInfo", sender: self)
     }
     

@@ -9,9 +9,19 @@ import UIKit
 
 class MoreInfoViewController: UIViewController {
 
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var titleOutlet: UILabel!
+    @IBOutlet weak var typeOutlet: UILabel!
+    @IBOutlet weak var yearOutlet: UILabel!
+    @IBOutlet weak var imdbIDOutlet: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var movie: MovieSearch?
+        
+        titleOutlet.text = "Title: \(SelectedMovieInfo.selectedMovie!.Title)"
+        typeOutlet.text = "Type: \(SelectedMovieInfo.selectedMovie!.Type)"
+        yearOutlet.text = "Year: \(SelectedMovieInfo.selectedMovie!.Year)"
+        imdbIDOutlet.text = "imdbID: \(SelectedMovieInfo.selectedMovie!.imdbID)"
+        //posterImageView.image = UIImage
     }
 
 }
