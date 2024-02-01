@@ -23,7 +23,7 @@ class MoreInfoViewController: UIViewController {
         imdbIDOutlet.text = "imdbID: \(SelectedMovieInfo.selectedMovie!.imdbID)"
         
         print("\(SelectedMovieInfo.selectedMovie!.Poster)")
-        let dataTask = URLSession.shared.dataTask(with: URL(string: "http://m.media-amazon.com/images/M/MV5BNDZlM2ZjMzctYTgxNS00NTcxLTk4YWItZGZhOWM5YTQ5MmIyXkEyXkFqcGdeQXVyMTU3NDU4MDg2._V1_SX300.jpg")!){
+        let dataTask = URLSession.shared.dataTask(with: URL(string: SelectedMovieInfo.selectedMovie!.Poster)!){
             (data: Data?, response: URLResponse?,error: Error?) in
             if let e = error{
                 print("Error: \(e)")
