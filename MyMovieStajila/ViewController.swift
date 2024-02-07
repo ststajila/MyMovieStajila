@@ -7,6 +7,7 @@
 
 public class SelectedMovieInfo{
     static var selectedMovie: MovieSearch?
+    var favoriteMovie: [MovieSearch] = []
 }
 
 struct MovieSearch: Codable{

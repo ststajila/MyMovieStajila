@@ -145,7 +145,13 @@
                             <constraint firstItem="Cx0-Ll-qse" firstAttribute="trailing" secondItem="eN7-oM-qPy" secondAttribute="trailing" id="X4L-FV-mSg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cBt-Ar-6lf"/>
+                    <navigationItem key="navigationItem" id="cBt-Ar-6lf">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="xms-RP-dZT">
+                            <connections>
+                                <action selector="saveAction:" destination="9Do-Ju-qOg" id="qm3-9h-DaI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imdbIDOutlet" destination="C2C-Y7-wTN" id="oZn-qx-n7h"/>
                         <outlet property="posterImageView" destination="Il7-ej-Haa" id="iLt-Zz-nAr"/>
