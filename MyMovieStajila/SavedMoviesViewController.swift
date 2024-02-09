@@ -12,9 +12,13 @@ class SavedMoviesViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     
+    var alert = UIAlertController(title: "Success", message: "The movie copied to the clipboard", preferredStyle: .alert)
+    var alertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        alert.addAction(alertAction)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 300
@@ -70,6 +74,7 @@ class SavedMoviesViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UIPasteboard.general.string = "\(SelectedMovieInfo.favoriteMovie[indexPath.row].Title) (\(SelectedMovieInfo.favoriteMovie[indexPath.row].Year))"
+        present(alert, animated: true, completion: nil)
         print("Copied")
     }
     

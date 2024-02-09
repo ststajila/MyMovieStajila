@@ -15,7 +15,7 @@ class MoreInfoViewController: UIViewController {
     @IBOutlet weak var yearOutlet: UILabel!
     @IBOutlet weak var imdbIDOutlet: UILabel!
     var defaults =  UserDefaults.standard
-    var alertController = UIAlertController(title: "Error", message: "The movie is already in your favorites!", preferredStyle: .alert)
+    var alertController = UIAlertController(title: "Hey", message: "The movie is already in your favorites!", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
