@@ -7,7 +7,7 @@
 
 public class SelectedMovieInfo{
     static var selectedMovie: MovieSearch?
-    var favoriteMovie: [MovieSearch] = []
+    static var favoriteMovie: [MovieSearch] = []
 }
 
 struct MovieSearch: Codable{
@@ -33,6 +33,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var searchTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let items = UserDefaults.standard.data(forKey: "favoriteMovie") {
+                        let decoder = JSONDecoder()
+                        if let decoded = try? decoder.decode([MovieSearch].self, from: items) {
+                            SelectedMovieInfo.favoriteMovie = decoded
+                        }
+                }
+        
         tableView.delegate = self
         tableView.dataSource = self
         

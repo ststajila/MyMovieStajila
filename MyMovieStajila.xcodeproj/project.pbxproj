@@ -17,6 +17,8 @@
 		1427FBA02B5EC63100C4E2F2 /* MyMovieStajilaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427FB9F2B5EC63100C4E2F2 /* MyMovieStajilaUITests.swift */; };
 		1427FBA22B5EC63200C4E2F2 /* MyMovieStajilaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427FBA12B5EC63200C4E2F2 /* MyMovieStajilaUITestsLaunchTests.swift */; };
 		149D2E632B62AD4200621D50 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D2E622B62AD4200621D50 /* MoreInfoViewController.swift */; };
+		8531D1E02B75226D00946A75 /* SavedMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531D1DF2B75226D00946A75 /* SavedMoviesViewController.swift */; };
+		8531D1E22B75252F00946A75 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531D1E12B75252F00946A75 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		1427FB9F2B5EC63100C4E2F2 /* MyMovieStajilaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieStajilaUITests.swift; sourceTree = "<group>"; };
 		1427FBA12B5EC63200C4E2F2 /* MyMovieStajilaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieStajilaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		149D2E622B62AD4200621D50 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
+		8531D1DF2B75226D00946A75 /* SavedMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMoviesViewController.swift; sourceTree = "<group>"; };
+		8531D1E12B75252F00946A75 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				1427FB7E2B5EC62F00C4E2F2 /* AppDelegate.swift */,
 				1427FB802B5EC62F00C4E2F2 /* SceneDelegate.swift */,
 				149D2E622B62AD4200621D50 /* MoreInfoViewController.swift */,
+				8531D1DF2B75226D00946A75 /* SavedMoviesViewController.swift */,
+				8531D1E12B75252F00946A75 /* CustomCell.swift */,
 				1427FB822B5EC62F00C4E2F2 /* ViewController.swift */,
 				1427FB842B5EC62F00C4E2F2 /* Main.storyboard */,
 				1427FB872B5EC63100C4E2F2 /* Assets.xcassets */,
@@ -263,7 +269,9 @@
 			files = (
 				1427FB832B5EC62F00C4E2F2 /* ViewController.swift in Sources */,
 				149D2E632B62AD4200621D50 /* MoreInfoViewController.swift in Sources */,
+				8531D1E02B75226D00946A75 /* SavedMoviesViewController.swift in Sources */,
 				1427FB7F2B5EC62F00C4E2F2 /* AppDelegate.swift in Sources */,
+				8531D1E22B75252F00946A75 /* CustomCell.swift in Sources */,
 				1427FB812B5EC62F00C4E2F2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
