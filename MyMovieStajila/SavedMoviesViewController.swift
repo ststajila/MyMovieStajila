@@ -60,6 +60,10 @@ class SavedMoviesViewController: UIViewController, UITableViewDelegate, UITableV
         {
             if editingStyle == .delete {
                 SelectedMovieInfo.favoriteMovie.remove(at: indexPath.row)
+                let encoder = JSONEncoder()
+                if let encoded = try? encoder.encode(SelectedMovieInfo.favoriteMovie) {
+                    UserDefaults.standard.set(encoded, forKey: "favoriteMovie")
+                }
                 tableView.reloadData()
             }
         }
