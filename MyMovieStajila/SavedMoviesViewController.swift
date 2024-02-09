@@ -63,4 +63,10 @@ class SavedMoviesViewController: UIViewController, UITableViewDelegate, UITableV
                 tableView.reloadData()
             }
         }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UIPasteboard.general.string = "\(SelectedMovieInfo.favoriteMovie[indexPath.row].Title) (\(SelectedMovieInfo.favoriteMovie[indexPath.row].Year))"
+        print("Copied")
+    }
+    
 }
